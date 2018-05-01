@@ -64,3 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added by Sasha
 gem 'faker' # Plausible company contacts
+gem 'graphql'
+gem 'graphiql-rails', group: :development

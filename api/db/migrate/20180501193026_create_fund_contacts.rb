@@ -8,10 +8,10 @@ class CreateFundContacts < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :stage, default: 0
       t.integer :interest, default: 0
-      t.text :whyWereInterested
-      t.text :whyTheyreInterested
+      t.text :why_were_interested
+      t.text :why_theyre_interested
       t.string :location
-      t.integer :investedAmount
+      t.integer :invested_amount
     end
   end
 end

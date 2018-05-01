@@ -6,8 +6,8 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.string :industry, null: false
-      t.integer :investmentLowerBound
-      t.integer :investmentUpperBound
+      t.integer :investment_lower_bound
+      t.integer :investment_upper_bound
     end
   end
 end
