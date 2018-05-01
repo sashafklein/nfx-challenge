@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker' # Plausible company contacts
 gem 'graphql'
 gem 'graphiql-rails', group: :development
+gem 'rack-cors', :require => 'rack/cors' # Avoid CORS issues with localhost client (code in application.rb)

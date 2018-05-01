@@ -1,4 +1,8 @@
 class GraphqlController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
+  # before_action :skip_cors, only: [:execute]
+
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]
@@ -30,4 +34,12 @@ class GraphqlController < ApplicationController
       raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
     end
   end
+
+  # def skip_cors
+  #   puts "IM IN HERE"
+  #   headers['Access-Control-Allow-Origin'] = '*'
+  #   headers['Access-Control-Allow-Methods'] = 'POST'
+  #   headers['Access-Control-Request-Method'] = '*'
+  #   headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  # end
 end
