@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import ContactDropdown from './ContactDropdown';
 import ContactTextInput from './ContactTextInput';
 
@@ -12,7 +14,7 @@ const FundContactRow = ({ contact, stages, interests }) => {
 
   return (
     <tr>
-      <td>{ fund.name }</td>
+      <td><Link to={ `/funds/${fund.id}` }>{ fund.name }</Link></td>
       <td>
         <ContactTextInput ids={ ids } text={ name } field="name" />
       </td>

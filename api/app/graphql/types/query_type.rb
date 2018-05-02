@@ -2,7 +2,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   name "Query"
 
   field :fundContacts, !types[Types::FundContactType] do
-    description "Fetches a company by ID, along with its fund contacts"
+    description "Fetches fund by ID, along with its fund contacts"
     argument :companyID, types.ID, as: :company_id
 
     resolve -> (obj, args, ctx) {
@@ -18,6 +18,15 @@ Types::QueryType = GraphQL::ObjectType.define do
 
     resolve -> (obj, args, ctx) {
       Company.where(id: args['id'])
+    }
+  end
+
+  field :fund, Types::FundType do
+    description "Fetches a fund, along with sanitized contacts"
+    argument :id, !types.ID
+
+    resolve -> (obj, args, ctx) {
+      Fund.find(args['id'])
     }
   end
 

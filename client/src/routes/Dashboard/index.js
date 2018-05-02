@@ -3,7 +3,8 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Table } from 'react-bootstrap';
 
-import TableHead from './TableHead';
+import TableHead from 'components/TableHead';
+import { toMoney } from 'utils/money';
 import FundContactRow from './FundContactRow';
 
 const Dashboard = () => (
@@ -14,6 +15,8 @@ const Dashboard = () => (
           name
           id
           industry
+          investmentLowerBound
+          investmentUpperBound
           fundContacts {
             name
             location
@@ -35,8 +38,8 @@ const Dashboard = () => (
   >
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
-      // if (error) debugger
       if (error) return <p>Error :(</p>;
+
       const { stages, companies, interests } = data;
       const company = companies[0];
 
@@ -45,9 +48,12 @@ const Dashboard = () => (
           <div className="company__data">
             <h1>{ company.name }</h1>
             <Table striped bordered condensed hover>
-              <TableHead rows={ ['Industry'] } />
+              <TableHead rows={ ['Industry', 'Investment Goal'] } />
               <tbody>
-                <tr><td>{company.industry}</td></tr>
+                <tr>
+                  <td>{company.industry}</td>
+                  <td>{ `${toMoney(company.investmentLowerBound)} - ${toMoney(company.investmentUpperBound)}` }</td>
+                </tr>
               </tbody>
             </Table>
           </div>

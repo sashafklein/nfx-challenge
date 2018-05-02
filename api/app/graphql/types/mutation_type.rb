@@ -13,11 +13,8 @@ Types::MutationType = GraphQL::ObjectType.define do
     argument :name, types.String
 
     resolve ->(obj, args, ctx) {
-      puts "WHOA"
-      puts args.to_h
       contact = FundContact.find_by(id: args['fund_contact_id'], company_id: args['company_id'])
       contact.update_attributes!(args.to_h.slice('stage', 'interest', 'why_were_interested', 'why_theyre_interested', 'name'))
-      puts contact.inspect
       contact
     }
   end

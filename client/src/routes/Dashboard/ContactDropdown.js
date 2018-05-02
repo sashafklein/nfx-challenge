@@ -2,7 +2,7 @@ import React from 'react';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 
-import { updateContactField } from './actions';
+import { updateContactField } from 'utils/actions';
 
 const ContactDropdown = ({ ids, options, choice, field }) => {
   const UPDATE_CONTACT = updateContactField(field);

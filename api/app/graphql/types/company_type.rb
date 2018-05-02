@@ -9,6 +9,6 @@ Types::CompanyType = GraphQL::ObjectType.define do
     resolve -> (obj, args, ctx) { obj.fund_contacts }
   end
 
-  field :investmentLowerBound, types.Int
-  field :investmentUpperBound, types.Int
+  field :investmentLowerBound, types.Int, hash_key: 'investment_lower_bound'
+  field :investmentUpperBound, types.Int, hash_key: 'investment_upper_bound'
 end
