@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
+import { Grid } from 'react-bootstrap';
 
 import Dashboard from './Dashboard';
 import './App.css';
@@ -16,7 +17,9 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <Dashboard />
+        <Grid>
+          <Dashboard />
+        </Grid>
       </ApolloProvider>
     );
   }

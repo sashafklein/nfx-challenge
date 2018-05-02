@@ -9,9 +9,9 @@ Types::FundContactType = GraphQL::ObjectType.define do
   field :stage, !types.String
   field :location, !types.String
 
-  field :whyWereInterested, types.String
-  field :whyTheyreInterested, types.String
-  field :investedAmount, types.Int
+  field :whyWereInterested, types.String, hash_key: :why_were_interested
+  field :whyTheyreInterested, types.String, hash_key: :why_theyre_interested
+  field :investedAmount, types.Int, hash_key: :invested_amount
 
   field :company, Types::CompanyType do
     resolve -> (obj, args, ctx) { obj.company }

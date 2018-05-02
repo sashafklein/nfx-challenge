@@ -1,5 +1,5 @@
 class CreateCompanies < ActiveRecord::Migration[5.2]
-  def change
+  def up
     create_table :companies do |t|
 
       t.timestamps
@@ -9,5 +9,9 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.integer :investment_lower_bound
       t.integer :investment_upper_bound
     end
+  end
+
+  def down
+    drop_table :companies
   end
 end

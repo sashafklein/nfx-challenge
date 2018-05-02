@@ -1,5 +1,5 @@
 class CreateFundContacts < ActiveRecord::Migration[5.2]
-  def change
+  def up
     create_table :fund_contacts do |t|
 
       t.timestamps
@@ -13,5 +13,9 @@ class CreateFundContacts < ActiveRecord::Migration[5.2]
       t.string :location
       t.integer :invested_amount
     end
+  end
+
+  def down
+    drop_table :fund_contacts
   end
 end

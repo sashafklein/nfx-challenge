@@ -7,7 +7,7 @@ essential = Fund.create(name: 'Essential Capital', size: 60_000_000)
 
 vcs = [ventures, angels, prove, essential]
 
-us = Company.create(name: 'Our Company', industry: 'Biotech', investmentUpperBound: 3_000_000, investmentLowerBound: 1_000_000)
+us = Company.create(name: 'Our Company', industry: 'Biotech', investment_upper_bound: 3_000_000, investment_lower_bound: 1_000_000)
 competition = Company.create(name: 'Other Biotech', industry: 'Biotech')
 more = Company.create(name: 'More Biotech', industry: 'Biotech')
 teach = Company.create(name: 'Teach.me', industry: 'Education')
@@ -30,7 +30,7 @@ biotech.concat(other).each do |company|
       name: "#{name} <#{name.split(' ').map(&:downcase).join('-')}@#{vc.name.split(' ').map(&:downcase).join('')}.com>",
       location: cities.sample,
       stage: :invested,
-      investedAmount: (vc_index + 1) * 1_000_000
+      invested_amount: (vc_index + 1) * 1_000_000
     )
   end
 end

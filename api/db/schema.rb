@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2018_05_01_193042) do
     t.datetime "updated_at", null: false
     t.string "name", null: false
     t.string "industry", null: false
-    t.integer "investmentLowerBound"
-    t.integer "investmentUpperBound"
+    t.integer "investment_lower_bound"
+    t.integer "investment_upper_bound"
   end
 
   create_table "fund_contacts", force: :cascade do |t|
@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2018_05_01_193042) do
     t.string "name"
     t.integer "stage", default: 0
     t.integer "interest", default: 0
-    t.text "whyWereInterested"
-    t.text "whyTheyreInterested"
+    t.text "why_were_interested"
+    t.text "why_theyre_interested"
     t.string "location"
-    t.integer "investedAmount"
+    t.integer "invested_amount"
     t.index ["company_id"], name: "index_fund_contacts_on_company_id"
     t.index ["fund_id"], name: "index_fund_contacts_on_fund_id"
   end
