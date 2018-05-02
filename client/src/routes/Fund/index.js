@@ -64,7 +64,7 @@ class Fund extends React.Component {
             {
               shownContacts.length
                 ? <Table>
-                  <TableHead rows={ ['Company Name', 'Industry', 'Amount Invested'] } />
+                  <TableHead columns={ ['Company Name', 'Industry', 'Amount Invested'] } />
                   <tbody>
                     {
                       shownContacts.map((contact, index) => (

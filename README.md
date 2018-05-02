@@ -7,8 +7,7 @@ Getting this running should be pretty straightforward. In one tab:
 ```
 cd api
 bundle
-rake:db:create
-rake:db:seed
+rake db:create && rake db:migrate && rake db:seed
 rails s
 ```
 
