@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Table } from 'react-bootstrap';
 
-import TableHead from './TableHead';
+import TableHead from 'components/TableHead';
 
 class Fund extends React.Component {
   constructor (props) {
@@ -62,7 +62,7 @@ class Fund extends React.Component {
             {
               shownContacts.length
                 ? <Table>
-                  <TableHead rows={ ['Company Name', 'Industry', 'Amount Invested'] } />
+                  <TableHead columns={ ['Company Name', 'Industry', 'Amount Invested'] } />
                   <tbody>
                     {
                       shownContacts.map((contact, index) => (
